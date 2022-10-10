@@ -1,17 +1,14 @@
 import './App.css';
-import {
-  BrowserRouter,
-  Routes,
-  // Route,
-} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Navbar } from './components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className='bg-mainRed md:bg-darkGreySecondary sm:bg-mainPurple'>
-        <h1>zs</h1>
-      </div>
+      <Navbar />
       <Routes>
+        <Route path='/' element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
