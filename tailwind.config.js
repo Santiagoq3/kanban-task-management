@@ -15,6 +15,7 @@ module.exports = {
       lightGrey: '#F4F7FD',
       mainRed: '#EA5555',
       mainRedHover: '#FF9898',
+      white: '#FFFFFF',
     },
     fontFamily: {
       JakartaSans: 'Plus Jakarta Sans',
