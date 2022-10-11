@@ -16,7 +16,7 @@ export const Navbar = () => {
             />
           </div>
         </div>
-        <div className="flex items-center gap-6 mr-2">
+        <div className='flex items-center gap-6 mr-2'>
           <button className='bg-mainPurple p-4 rounded-3xl w-12'>
             <img className='w-full' src='../assets/icon-add-task-mobile.svg' />
           </button>
@@ -25,13 +25,6 @@ export const Navbar = () => {
           </button>
         </div>
       </div>
-      <nav>
-        <ul>
-          <li>
-            <a href=''></a>
-          </li>
-        </ul>
-      </nav>
     </header>
   );
 };
