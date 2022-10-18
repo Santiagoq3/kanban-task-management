@@ -5,7 +5,7 @@ export const Board = () => {
         <p className='text-graySecondary text-xl font-bold'>
           This board is empty. Create a new column to get started.
         </p>
-        <button className='flex items-center m-auto bg-mainPurple p-3 mt-4 text-white rounded-3xl text-lg font-bold '>
+        <button className='flex items-center m-auto bg-mainPurple p-3 mt-4 text-white rounded-3xl text-lg font-bold hover:bg-mainPurpleHover'>
           + Add New Column
         </button>
       </div>

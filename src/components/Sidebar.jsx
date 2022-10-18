@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 export const Sidebar = ({ setIsShowSidebar, isShowSidebar }) => {
   return (
-    <nav className='md:block md:static md:rounded-none md:w-[260px] absolute top-24 flex justify-between flex-col left-24 right-24  rounded-md bg-white  '>
+    <nav className='md:block md:static md:rounded-none md:w-[300px] absolute top-24 flex justify-between flex-col left-24 right-24  rounded-md bg-white  '>
       <p className='mb-4 pt-6 pl-6 font-bold text-graySecondary text-sm tracking-widest uppercase'>
         All boards (3)
       </p>
@@ -38,7 +38,7 @@ export const Sidebar = ({ setIsShowSidebar, isShowSidebar }) => {
           </a>
         </li>
       </ul>
-      <div className='p-2'>
+      <div className='p-2 mt-6 '>
         <div className='p-3 mt-6 flex justify-evenly bg-Light rounded'>
           <img
             className='cursor-pointer'
@@ -47,15 +47,16 @@ export const Sidebar = ({ setIsShowSidebar, isShowSidebar }) => {
 
           <img className='cursor-pointer' src='../assets/icon-dark-theme.svg' />
         </div>
-      </div>
-      <div
-        onClick={() => setIsShowSidebar(!isShowSidebar)}
-        className='hidden md:flex items-center gap-2 p-4 cursor-pointer'
-      >
-        <img src='../assets/icon-hide-sidebar.svg' />
-        <p className='text-graySecondary text-base font-semibold'>
-          Hide sidebar
-        </p>
+
+        <div
+          onClick={() => setIsShowSidebar(!isShowSidebar)}
+          className='hidden md:flex items-center gap-2 p-4 cursor-pointer'
+        >
+          <img src='../assets/icon-hide-sidebar.svg' />
+          <p className='text-graySecondary text-base font-semibold'>
+            Hide sidebar
+          </p>
+        </div>
       </div>
     </nav>
   );
