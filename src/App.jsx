@@ -2,20 +2,22 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { Navbar } from './components/Navbar';
-import { Board } from './components/Board';
-
+import { Boards } from './components/Boards';
+import { AppContext } from './context/AppContext';
 function App() {
   return (
-    <BrowserRouter>
-      <div className='w-full relative'>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Home />}>
-            <Route path='/:id' element={<Board />} />
-          </Route>
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <AppContext>
+      <BrowserRouter>
+        <div className='w-full relative'>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />}>
+              <Route path='/:id' element={<Boards />} />
+            </Route>
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </AppContext>
   );
 }
 export default App;

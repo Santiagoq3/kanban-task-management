@@ -1,34 +1,32 @@
 // import { useState } from "react";
+
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { appContext } from '../context/AppContext';
 /* eslint-disable react/prop-types */
 export const Sidebar = ({ setIsShowSidebar, isShowSidebar }) => {
+  const { boards } = useContext(appContext);
   return (
     <nav className='md:block md:static md:rounded-none md:w-[300px] absolute top-24 flex justify-between flex-col left-24 right-24  rounded-md bg-white  '>
       <p className='mb-4 pt-6 pl-6 font-bold text-graySecondary text-sm tracking-widest uppercase'>
-        All boards (3)
+        All boards ({boards.length})
       </p>
-      <ul>
-        <li className='grid gap-6'>
-          <a
-            className='flex  max-w-[250px] rounded-r-xl text-graySecondary hover:text-white  items-center gap-3 hover:bg-mainPurple pl-6 pt-2 pb-2'
-            href=''
-          >
-            <img className='w-[16px] h-[16px]' src='../assets/icon-board.svg' />
-            <p className='font-semibold'>Platform Launch</p>
-          </a>
-          <a
-            className='flex  max-w-[250px] rounded-r-xl text-graySecondary hover:text-white  items-center gap-3 hover:bg-mainPurple pl-6 pt-2 pb-2'
-            href=''
-          >
-            <img className='w-[16px] h-[16px]' src='../assets/icon-board.svg' />
-            <p className='font-semibold'>Marketing plant</p>
-          </a>
-          <a
-            className='flex  max-w-[250px] rounded-r-xl text-graySecondary hover:text-white  items-center gap-3 hover:bg-mainPurple pl-6 pt-2 pb-2'
-            href=''
-          >
-            <img className='w-[16px] h-[16px]' src='../assets/icon-board.svg' />
-            <p className='font-semibold'>Roadmap</p>
-          </a>
+      <ul className='grid gap-6'>
+        {boards.map((b) => (
+          <li key={b.id}>
+            <Link
+              to={`./${b.id}`}
+              className='flex  max-w-[250px] rounded-r-xl text-graySecondary hover:text-white  items-center gap-3 hover:bg-mainPurple pl-6 pt-2 pb-2'
+            >
+              <img
+                className='w-[16px] h-[16px]'
+                src='../assets/icon-board.svg'
+              />
+              <p className='font-semibold'>{b.name}</p>
+            </Link>
+          </li>
+        ))}
+        <li>
           <a
             className='flex  max-w-[250px] rounded-r-xl text-mainPurple hover:text-white  items-center gap-3 hover:bg-mainPurple pl-6 pt-2 pb-2'
             href=''
