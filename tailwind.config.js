@@ -16,6 +16,9 @@ module.exports = {
       mainRed: '#EA5555',
       mainRedHover: '#FF9898',
       white: '#FFFFFF',
+      circleDoingColum: '#8471F2',
+      circleTodoColum: '#49C4E5',
+      circleDoneColum: '#67E2AE',
     },
     fontFamily: {
       JakartaSans: 'Plus Jakarta Sans',
