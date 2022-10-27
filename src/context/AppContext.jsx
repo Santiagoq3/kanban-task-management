@@ -7,6 +7,7 @@ const { Provider } = appContext;
 export const AppContext = ({ children }) => {
   const [boards, setBoards] = useState([]);
   const [isBoardsLoading, setisBoardsLoading] = useState(true);
+  const [board, setBoard] = useState(null);
 
   useEffect(() => {
     fetch('./data.json')
@@ -18,16 +19,14 @@ export const AppContext = ({ children }) => {
       .finally(() => setisBoardsLoading(false));
   }, []);
 
-  const findBoard = (voards, id) => {
-    console.log('findBoardId', id);
-    console.log('findBoardBoards', voards);
-    const b = voards.find((b) => b.id === id);
-    console.log('b', b);
+  const findBoard = (id) => {
+    // console.log('findBoardBoards', voards);
+    const b = boards.find((b) => b.id === id);
     return b;
   };
 
   return (
-    <Provider value={{ boards, findBoard, isBoardsLoading }}>
+    <Provider value={{ boards, findBoard, isBoardsLoading, board, setBoard }}>
       {children}
     </Provider>
   );
