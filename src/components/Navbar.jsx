@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <header className='bg-white h-[80px]  '>
+    <header className='bg-white h-[80px]  sticky  '>
       <div className=' flex gap-12 h-full items-center justify-between '>
         <img className='md:block hidden p-4 ' src='../assets/logo-dark.svg' />
         <div className='flex h-full border-l border-b border-l-[#ccc] border-b-[#ccc] flex-auto items-center justify-between p-4'>
@@ -19,11 +19,14 @@ export const Navbar = () => {
             </div>
           </div>
           <div className='flex items-center gap-6 mr-2'>
-            <button className='bg-mainPurple p-4 rounded-3xl w-12'>
+            <button className='md:w-[195px] flex items-center justify-center bg-mainPurple p-4 rounded-3xl w-12'>
               <img
-                className='w-full'
+                className='w-full md:hidden'
                 src='../assets/icon-add-task-mobile.svg'
               />
+              <p className='hidden md:block text-white font-bold text-base'>
+                + Add New Task
+              </p>
             </button>
             <button>
               <img src='../assets/icon-vertical-ellipsis.svg' />

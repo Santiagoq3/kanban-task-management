@@ -8,7 +8,7 @@ function App() {
   return (
     <AppContext>
       <BrowserRouter>
-        <div className='w-full relative'>
+        <div className=''>
           <Navbar />
           <Routes>
             <Route path='/' element={<Home />}>

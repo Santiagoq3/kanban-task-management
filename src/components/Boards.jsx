@@ -1,38 +1,39 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { appContext } from '../context/AppContext';
-// import { BoardColumnsList } from './BoardColumnsList';
+import { BoardColumnsList } from './BoardColumnsList';
 export const Boards = () => {
-  const { boards, isBoardsLoading } = useContext(appContext);
-  const [board, setBoard] = useState({});
-  console.log(boards);
+  const { boards, findBoard, setBoard, board } = useContext(appContext);
+  // const [board, setBoard] = useState({});
+  // console.log(boards);
   const { id } = useParams();
 
   useEffect(() => {
-    console.log(boards);
-    const boardAux = boards.find((b) => b.id === Number(id));
-    console.log('boardAux', boardAux);
+    // const boardAux = boards.find((b) => b.id === Number(id));
+    const boardAux = findBoard(Number(id));
     setBoard(boardAux);
   }, [boards]);
 
-  if (isBoardsLoading) {
+  if (!board) {
     return <p>Loading...</p>;
   }
 
-  console.log(board);
+  // eslint-disable-next-line no-unneeded-ternary
+  // console.log(board.name ? true : false);
   return (
-    <div className='flex items-center justify-center bg-Light w-full h-full m-h-[1000px] font-JakartaSans '>
+    <div className=' bg-lightGrey  w-full overflow-x-scroll   h-full  font-JakartaSans '>
       {boards.length > 0 ? (
-        // <BoardColumnsList board={board} />
-        <h1>zs</h1>
+        <BoardColumnsList board={board} />
       ) : (
-        <div className='text-center mb-4'>
-          <p className='text-graySecondary text-xl font-bold'>
-            This board is empty. Create a new column to get started.
-          </p>
-          <button className='flex items-center m-auto bg-mainPurple p-3 mt-4 text-white rounded-3xl text-lg font-bold hover:bg-mainPurpleHover'>
-            + Add New Column
-          </button>
+        <div className=' flex flex-col items-center h-full w-full  justify-center text-center mb-4'>
+          <div>
+            <p className='text-graySecondary text-xl font-bold'>
+              This board is empty. Create a new column to get started.
+            </p>
+            <button className='flex items-center m-auto bg-mainPurple p-3 mt-4 text-white rounded-3xl text-lg font-bold hover:bg-mainPurpleHover'>
+              + Add New Column
+            </button>
+          </div>
         </div>
       )}
     </div>

@@ -7,7 +7,7 @@ import { appContext } from '../context/AppContext';
 export const Sidebar = ({ setIsShowSidebar, isShowSidebar }) => {
   const { boards } = useContext(appContext);
   return (
-    <nav className='md:block md:static md:rounded-none md:w-[300px] absolute top-24 flex justify-between flex-col left-24 right-24  rounded-md bg-white  '>
+    <nav className='md:block md:static md:rounded-none md:w-[300px] absolute w-[300px] top-24 flex justify-between flex-col left-10 right-24  rounded-md bg-white  '>
       <p className='mb-4 pt-6 pl-6 font-bold text-graySecondary text-sm tracking-widest uppercase'>
         All boards ({boards.length})
       </p>
