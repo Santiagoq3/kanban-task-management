@@ -1,9 +1,11 @@
 /* eslint-disable no-constant-condition */
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from '../components/Sidebar';
+import { appContext } from '../context/AppContext';
+
 export const Home = () => {
-  const [isShowSidebar, setIsShowSidebar] = useState(true);
+  const { isShowSidebar, setIsShowSidebar } = useContext(appContext);
   return (
     <>
       <div className='md:flex h-[890px] m-h-[1024px] bg-mainRed md:bg-mainPurpleHover sm:bg-mainPurple'>

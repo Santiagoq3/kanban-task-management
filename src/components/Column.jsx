@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
+import { useContext } from 'react';
+import { appContext } from '../context/AppContext';
 import './Column.css';
 export const Column = ({ board }) => {
+  const { setIsModalViewTaskOpen } = useContext(appContext);
   console.log(board);
   return (
     <div className='cursor-pointer min-w-[280px] ml-2'>
@@ -17,7 +20,10 @@ export const Column = ({ board }) => {
               className='column-task bg-white mt-6 p-3 w-full rounded max-w-[280px]'
               key={task}
             >
-              <h3 className='text-[#000112] font-bold hover:text-mainPurple'>
+              <h3
+                onClick={() => setIsModalViewTaskOpen(true)}
+                className='text-[#000112] font-bold hover:text-mainPurple'
+              >
                 {task.title}
               </h3>
               <p className='mt-2 text-graySecondary text-sm font-bold pb-2'>

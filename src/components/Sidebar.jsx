@@ -4,8 +4,8 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { appContext } from '../context/AppContext';
 /* eslint-disable react/prop-types */
-export const Sidebar = ({ setIsShowSidebar, isShowSidebar }) => {
-  const { boards } = useContext(appContext);
+export const Sidebar = () => {
+  const { boards, isShowSidebar, setIsShowSidebar } = useContext(appContext);
   return (
     <nav className='md:block md:static md:rounded-none md:w-[300px] absolute w-[300px] top-24 flex justify-between flex-col left-10 right-24  rounded-md bg-white  '>
       <p className='mb-4 pt-6 pl-6 font-bold text-graySecondary text-sm tracking-widest uppercase'>

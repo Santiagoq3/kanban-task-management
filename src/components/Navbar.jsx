@@ -1,4 +1,8 @@
+import { useContext } from 'react';
+import { appContext } from '../context/AppContext';
+
 export const Navbar = () => {
+  const { isShowSidebar, setIsShowSidebar } = useContext(appContext);
   return (
     <header className='bg-white h-[80px]  sticky  '>
       <div className=' flex gap-12 h-full items-center justify-between '>
@@ -15,6 +19,9 @@ export const Navbar = () => {
               <img
                 className='w-2 h-2 cursor-pointer'
                 src='../assets/icon-chevron-up.svg'
+                onClick={() => {
+                  setIsShowSidebar(!isShowSidebar);
+                }}
               />
             </div>
           </div>
