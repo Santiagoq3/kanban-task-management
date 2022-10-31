@@ -4,7 +4,6 @@ import { appContext } from '../context/AppContext';
 import './Column.css';
 export const Column = ({ board }) => {
   const { setIsModalViewTaskOpen } = useContext(appContext);
-  console.log(board);
   return (
     <div className='cursor-pointer min-w-[280px] ml-2'>
       <span className='flex items-center gap-2'>
@@ -14,11 +13,11 @@ export const Column = ({ board }) => {
         </p>
       </span>
       <ul className='mt-4'>
-        {board.tasks.map((task) => {
+        {board.tasks.map((task, i) => {
           return (
             <li
               className='column-task bg-white mt-6 p-3 w-full rounded max-w-[280px]'
-              key={task}
+              key={i}
             >
               <h3
                 onClick={() => setIsModalViewTaskOpen(true)}

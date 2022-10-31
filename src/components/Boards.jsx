@@ -3,26 +3,21 @@ import { useParams } from 'react-router-dom';
 import { appContext } from '../context/AppContext';
 import { BoardColumnsList } from './BoardColumnsList';
 export const Boards = () => {
-  const { boards, findBoard, setBoard, board } = useContext(appContext);
-  // const [board, setBoard] = useState({});
-  // console.log(boards);
+  const { findBoard, board, setBoard } = useContext(appContext);
+
   const { id } = useParams();
 
   useEffect(() => {
-    // const boardAux = boards.find((b) => b.id === Number(id));
-    const boardAux = findBoard(Number(id));
-    setBoard(boardAux);
-  }, [boards]);
-
-  if (!board) {
-    return <p>Loading...</p>;
-  }
+    setBoard(findBoard(Number(id)));
+  }, [id]);
 
   // eslint-disable-next-line no-unneeded-ternary
-  // console.log(board.name ? true : false);
+  if (!board) {
+    return <span>loading...</span>;
+  }
   return (
     <div className=' bg-lightGrey  w-full overflow-x-scroll   h-full  font-JakartaSans '>
-      {boards.length > 0 ? (
+      {board.columns.length > 0 ? (
         <BoardColumnsList board={board} />
       ) : (
         <div className=' flex flex-col items-center h-full w-full  justify-center text-center mb-4'>
