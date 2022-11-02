@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { appContext } from '../context/AppContext';
 
 export const Navbar = () => {
-  const { isShowSidebar, setIsShowSidebar } = useContext(appContext);
+  const { isShowSidebar, setIsShowSidebar,setIsModalAddTaskOpen } = useContext(appContext);
   return (
     <header className='bg-white h-[80px]  sticky  '>
       <div className=' flex gap-12 h-full items-center justify-between '>
@@ -31,7 +31,7 @@ export const Navbar = () => {
                 className='w-full md:hidden'
                 src='../assets/icon-add-task-mobile.svg'
               />
-              <p className='hidden md:block text-white font-bold text-base'>
+              <p onClick={() => setIsModalAddTaskOpen(true)} className='hidden md:block text-white font-bold text-base'>
                 + Add New Task
               </p>
             </button>

@@ -6,6 +6,7 @@ import 'react-responsive-modal/styles.css';
 import './modalViewTask.css';
 import './Column.css';
 import { appContext } from '../context/AppContext';
+import { AddTaskModal } from './modals/AddTaskModal';
 
 export const BoardColumnsList = ({ board }) => {
   const { isModalViewTaskOpen, setIsModalViewTaskOpen } =
@@ -81,6 +82,7 @@ export const BoardColumnsList = ({ board }) => {
                 </select>
               </div>
             </Modal>
+            <AddTaskModal />
           </div>
         </>
       ) : (
