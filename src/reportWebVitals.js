@@ -9,6 +9,6 @@ const reportWebVitals = (onPerfEntry) => {
 		});
 	}
 };
-console.log("test")
+console.log("test 2")
 
 export default reportWebVitals;
