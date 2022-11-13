@@ -34,7 +34,7 @@ export const AppContext = ({ children }) => {
         setBoards,
         setisBoardsLoading,
         isModalAddTaskOpen,
-        setIsModalAddTaskOpen
+        setIsModalAddTaskOpen,
       }}
     >
       {children}

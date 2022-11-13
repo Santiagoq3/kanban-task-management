@@ -5,10 +5,8 @@ import 'react-responsive-modal/styles.css';
 import { appContext } from '../../context/AppContext';
 import { useContext } from 'react';
 
-
 export const AddTaskModal = () => {
-    const { isModalAddTaskOpen, setIsModalAddTaskOpen } =
-      useContext(appContext);
+  const { isModalAddTaskOpen, setIsModalAddTaskOpen } = useContext(appContext);
   return (
     <div>
       <Modal
@@ -20,40 +18,62 @@ export const AddTaskModal = () => {
           modal: 'customModal',
         }}
       >
-        <h1 className='text-[#000112] text-xl font-bold wra'>
-         Add New Task
-        </h1>
-        <p className='text-graySecondary text-base  my-6 leading-6'>
-          We know what were planning to build for version one. Now we need to
-          finalise the first pricing model well use. Keep iterating the subtasks
-          until we have a coherent proposition.
-        </p>
-        <h3 className='text-graySecondary text-sm font-semibold'>
-          Subtasks (2 of 3)
-        </h3>
-        <ul>
-          <li className='flex items-center p-4 bg-lightGrey mt-2 '>
-            <input type={'checkbox'} />
-            <p className='text-graySecondary ml-2 text-base font-semibold '>
-              Research competitor pricing and business models
-            </p>
-          </li>
-          <li className='flex items-center p-4 bg-lightGrey mt-2 '>
-            <input type={'checkbox'} />
-            <p className='text-graySecondary ml-2 text-base font-semibold '>
-              Research competitor pricing and business models
-            </p>
-          </li>
-          {/* dont delete */}
-          <li className='flex items-center p-4 bg-lightGrey mt-2 '>
-            <input type={'checkbox'} />
-            <p className='text-[#000112] ml-2 text-base font-bold '>
-              Research competitor pricing and business models
-            </p>
-          </li>
-        </ul>
+        <h1 className='text-[#000112] text-xl font-bold wra'>Add New Task</h1>
+        <div className='mt-4'>
+          <label className='font-bold text-graySecondary text-sm'>Title</label>{' '}
+          <br />
+          <input
+            type={'text'}
+            className='p-2 w-[295px] outline-none border border-[#828FA3] rounded-md mt-2  '
+            placeholder='e.g. Take coffee break'
+          />
+        </div>
+        <div className='mt-4'>
+          <label className='font-bold text-graySecondary text-sm'>
+            Description
+          </label>
+          <br />
+          <input
+            type={'text'}
+            className=' w-[295px] h-[110px] outline-none border border-[#828FA3] rounded-md mt-2 placeholder:  '
+            placeholder='e.g. It’s always good to take a break. This 
+15 minute break will  recharge the batteries 
+a little.'
+          />
+        </div>
+        <div className='mt-4'>
+          <label className='font-bold text-graySecondary text-sm'>
+            Subtasks
+          </label>
+          <div className='flex items-center'>
+            <input
+              type={'text'}
+              className='p-2 w-[295px] outline-none border border-[#828FA3] rounded-md mt-2  '
+              placeholder='e.g. Make coffee'
+            />
+            <img
+              className='ml-2 cursor-pointer'
+              src='../assets/icon-cross.svg'
+            />
+          </div>
+          <div className='flex items-center'>
+            <input
+              type={'text'}
+              className='p-2 w-[295px] outline-none border border-[#828FA3] rounded-md mt-2  '
+              placeholder='e.g. Drink coffee & smile'
+            />
+            <img
+              className='ml-2 cursor-pointer'
+              src='../assets/icon-cross.svg'
+            />
+          </div>
+          <br />
+        </div>
+        <button className='p-3 rounded-[20px] text-mainPurple text-center font-semibold w-full bg-[#635fc733] '>
+          + Add New Subtask
+        </button>
         <div className='mt-8'>
-          <p className='text-graySecondary text-sm font-bold'>Current Status</p>
+          <p className='text-graySecondary text-sm font-bold'>Status</p>
           <select className='border rounded-md border-graySecondary mt-1 w-full p-2'>
             <option value='todo'>Todo</option>
             <option value='doing' selected>
@@ -62,6 +82,9 @@ export const AddTaskModal = () => {
             <option value='done'>Done</option>
           </select>
         </div>
+        <button className='p-3 mt-4 rounded-[20px] text-white text-center font-semibold w-full bg-mainPurple '>
+          Create Task
+        </button>
       </Modal>
     </div>
   );
