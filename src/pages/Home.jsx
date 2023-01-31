@@ -35,7 +35,7 @@ export const Home = () => {
           ) : (
             <div
               onClick={() => setIsShowSidebar(!isShowSidebar)}
-              className='absolute bottom-20 left-0  p-4 bg-mainPurple rounded-r-2xl cursor-pointer	hover:bg-mainPurpleHover	'
+              className='absolute bottom-20 left-0  p-4 bg-mainPurple  hidden md:block rounded-r-2xl cursor-pointer	hover:bg-mainPurpleHover	'
             >
               <img className='w-4 h-3' src='../assets/icon-show-sidebar.svg' />
             </div>

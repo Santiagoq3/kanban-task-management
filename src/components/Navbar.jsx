@@ -2,12 +2,13 @@ import { useContext } from 'react';
 import { appContext } from '../context/AppContext';
 
 export const Navbar = () => {
-  const { isShowSidebar, setIsShowSidebar,setIsModalAddTaskOpen } = useContext(appContext);
+  const { isShowSidebar, setIsShowSidebar, setIsModalAddTaskOpen } =
+    useContext(appContext);
   return (
     <header className='bg-white h-[80px]  sticky  '>
       <div className=' flex gap-12 h-full items-center justify-between '>
         <img className='md:block hidden p-4 ' src='../assets/logo-dark.svg' />
-        <div className='flex h-full border-l border-b border-l-[#ccc] border-b-[#ccc] flex-auto items-center justify-between p-4'>
+        <div className='flex h-full  border-l-[#ccc] border-b-[#ccc] flex-auto items-center justify-between p-4'>
           <div className=' flex items-center gap-4'>
             <img
               className='md:hidden '
@@ -26,12 +27,15 @@ export const Navbar = () => {
             </div>
           </div>
           <div className='flex items-center gap-6 mr-2'>
-            <button className='md:w-[195px] flex items-center justify-center bg-mainPurple p-4 rounded-3xl w-12'>
+            <button
+              onClick={() => setIsModalAddTaskOpen(true)}
+              className='md:w-[195px] flex items-center justify-center bg-mainPurple p-4 rounded-3xl w-12'
+            >
               <img
                 className='w-full md:hidden'
                 src='../assets/icon-add-task-mobile.svg'
               />
-              <p onClick={() => setIsModalAddTaskOpen(true)} className='hidden md:block text-white font-bold text-base'>
+              <p className='hidden md:block text-white font-bold text-base'>
                 + Add New Task
               </p>
             </button>
