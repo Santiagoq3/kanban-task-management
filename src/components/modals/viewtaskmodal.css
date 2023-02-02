@@ -1,56 +1,55 @@
 .view-task-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    border-radius: 5px;
-    padding: 20px;
-    height: 557px ;
-    min-width: 350px;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px;
-    padding: 5px 10px;
-    background-color: white;
-    border: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-  }
-  
-  .modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .popover {
-    position: absolute;
-    background-color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border: red;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    display: none; /* Oculto por defecto */
-  }
-  
-  /* Posicionamiento */
-  .extra-button + .popover {
-    top: calc(100% + 10px); /* 100% de la altura del botón + 10px de margen */
-    left: 50%; /* Centrado en el eje x */
-    transform: translateX(-50%); /* Centrado en el eje x */
-  }
-  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 5px;
+  padding: 20px;
+  height: 557px;
+  min-width: 350px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  padding: 5px 10px;
+  background-color: white;
+  border: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popover {
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border: red;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  display: none; /* Oculto por defecto */
+}
+
+/* Posicionamiento */
+.extra-button + .popover {
+  top: calc(100% + 10px); /* 100% de la altura del botón + 10px de margen */
+  left: 50%; /* Centrado en el eje x */
+  transform: translateX(-50%); /* Centrado en el eje x */
+}

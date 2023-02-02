@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { appContext } from '../context/AppContext';
 /* eslint-disable react/prop-types */
 export const Sidebar = () => {
-  const { boards, isShowSidebar, setIsShowSidebar } = useContext(appContext);
+  const { boards, isShowSidebar, setIsShowSidebar, setIsModalNewBoardOpen } =
+    useContext(appContext);
   return (
     <nav className='md:block md:static md:rounded-none md:w-[300px] absolute w-[300px] top-24 flex justify-between flex-col left-10 right-24  rounded-md bg-white  '>
       <p className='mb-4 pt-6 pl-6 font-bold text-graySecondary text-sm tracking-widest uppercase'>
@@ -27,12 +28,14 @@ export const Sidebar = () => {
           </li>
         ))}
         <li>
-          <a
-            className='flex  max-w-[250px] rounded-r-xl text-mainPurple hover:text-white  items-center gap-3 hover:bg-mainPurple pl-6 pt-2 pb-2'
-            href=''
-          >
+          <a className='flex  max-w-[250px] rounded-r-xl text-mainPurple hover:text-white  items-center gap-3 hover:bg-mainPurple pl-6 pt-2 pb-2'>
             <img className='w-[16px] h-[16px]' src='../assets/icon-board.svg' />
-            <p className='font-semibold'>+ Create New Board</p>
+            <p
+              onClick={() => setIsModalNewBoardOpen(true)}
+              className='font-semibold'
+            >
+              + Create New Board
+            </p>
           </a>
         </li>
       </ul>

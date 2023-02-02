@@ -13,6 +13,7 @@ export const AppContext = ({ children }) => {
 
   const [isModalViewTaskOpen, setIsModalViewTaskOpen] = useState(false);
   const [isModalAddTaskOpen, setIsModalAddTaskOpen] = useState(false);
+  const [isModalNewBoardOpen, setIsModalNewBoardOpen] = useState(false);
 
   const findBoard = (id) => {
     const b = boards.find((b) => b.id === id);
@@ -35,6 +36,8 @@ export const AppContext = ({ children }) => {
         setisBoardsLoading,
         isModalAddTaskOpen,
         setIsModalAddTaskOpen,
+        isModalNewBoardOpen,
+        setIsModalNewBoardOpen,
       }}
     >
       {children}

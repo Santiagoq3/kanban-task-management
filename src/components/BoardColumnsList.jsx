@@ -4,10 +4,15 @@ import { Column } from './Column';
 import { appContext } from '../context/AppContext';
 import { AddTaskModal } from './modals/AddTaskModal';
 import ViewTaskModal from './modals/ViewTaskModal';
+import { AddNewBoardModal } from './modals/AddNewBoardModal';
 
 export const BoardColumnsList = ({ board }) => {
-  const { isModalViewTaskOpen, setIsModalViewTaskOpen, isModalAddTaskOpen } =
-    useContext(appContext);
+  const {
+    isModalViewTaskOpen,
+    setIsModalViewTaskOpen,
+    isModalAddTaskOpen,
+    isModalNewBoardOpen,
+  } = useContext(appContext);
   // const [isModalOptionsOpen, setIsModalOptionsOpen] =useState(false)
   // const [isOpen, setIsOpen] = useState(false);
   //  const [isPopoverOpen, isSetPopoverOpen] = useState(false);
@@ -27,18 +32,19 @@ export const BoardColumnsList = ({ board }) => {
           </ul>
           <div>
             <div>
-              <div>
-
-                {isModalAddTaskOpen && <AddTaskModal />}
-              </div>
+              <div>{isModalAddTaskOpen && <AddTaskModal />}</div>
             </div>
             <div>
               <div>
-
                 {isModalViewTaskOpen && (
-                  <ViewTaskModal setIsModalViewTaskOpen={setIsModalViewTaskOpen} />
+                  <ViewTaskModal
+                    setIsModalViewTaskOpen={setIsModalViewTaskOpen}
+                  />
                 )}
               </div>
+            </div>
+            <div>
+              <div>{isModalNewBoardOpen && <AddNewBoardModal />}</div>
             </div>
           </div>
         </>

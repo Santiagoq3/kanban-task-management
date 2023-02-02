@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 
-import "./viewtaskmodal.css"
+import './viewtaskmodal.css';
 
-const ViewTaskModal = ({setIsModalViewTaskOpen}) => {
+const ViewTaskModal = ({ setIsModalViewTaskOpen }) => {
   return (
     <div onClick={() => setIsModalViewTaskOpen(false)}>
       <div className='modal-backdrop' />
@@ -30,7 +30,7 @@ const ViewTaskModal = ({setIsModalViewTaskOpen}) => {
               <button className='mt-1'>X</button>
             </div>
           </div>
-          <p className='text-graySecondary text-xs  my-6 leading-6'>
+          <p className='text-graySecondary text-xs md:text-sm  my-6 leading-6'>
             We know what were planning to build for version one. Now we need to
             finalise the first pricing model well use. Keep iterating the
             subtasks until we have a coherent proposition.
@@ -59,7 +59,7 @@ const ViewTaskModal = ({setIsModalViewTaskOpen}) => {
               </p>
             </li>
           </ul>
-          <div className='mt-2'>
+          <div className='mt-2 md:mt-6'>
             <p className='text-graySecondary text-sm font-bold'>
               Current Status
             </p>
