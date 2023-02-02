@@ -20,14 +20,14 @@ const ViewTaskModal = ({ setIsModalViewTaskOpen }) => {
       </button> */}
 
         <div>
-          <div className='flex '>
+          <div className='flex space-x-4 '>
             <h1 className='text-[#000112] text-lg font-bold wra'>
               Research pricing points of various competitors and trial different
               business models
             </h1>
             <div className='flex  flex-col '>
               <button onClick={() => setIsModalViewTaskOpen(false)}>X</button>
-              <button className='mt-1'>X</button>
+              
             </div>
           </div>
           <p className='text-graySecondary text-xs md:text-sm  my-6 leading-6'>
